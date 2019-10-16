@@ -5,7 +5,13 @@ import UIKit
 // a. Define an enumeration called iOSDeviceType with member values iPhone, iPad, iWatch. Create a variable called myiPad and assign it to .iPad.
 
 // Your code here
-
+/*
+ enum iOSDeviceType {
+    case iPhone
+    case iPad
+    case iWatch
+}
+*/
 // Uncomment the lines below to test your solution
 
 //let myiPad = iOSDeviceType.iPad
@@ -14,6 +20,15 @@ import UIKit
 // b. Adjust your code above so that iPhone and iPad have associated values of type String which represents the model number.  Create an instance of a .iPhone("8+") and assign it to a variable called myPhone
 
 // Your code here
+/*
+enum iOSDeviceType {
+    case iPhone(String)
+    case iPad
+    case iWatch(String)
+}
+
+let myPhone = iOSDeviceType.iPhone("8+")
+*/
 
 // Uncomment the lines below to test your solution
 
@@ -33,18 +48,29 @@ import UIKit
 
 
 enum Step {
-    case up
-    case down
-    case left
-    case right
+    case up (x:Int, y:Int)
+    case down (x:Int, y:Int)
+    case left (x:Int, y:Int)
+    case right (x:Int, y:Int)
 }
 
 // Your function here
+func getPosition(in arr: [Step]) ->(Int,Int) {
+    for _ in arr {
+    
+    switch arr {
+    case up :
+
+    
+        
+        
+    return (0,0)
+}
 
 // Uncomment the lines below to test your solution
 
 //let startingLocation = (x: 0, y: 0)
-//let steps: [Step] = [.up, .up, .left, .down, .left]
+let steps: [Step] = [.up, .up, .left, .down, .left]
 //let expectedEndPosition = (x: -2, y: 1)
 //let endPosition = getPosition(startingAt: startingLocation, afterSteps: steps)
 //
