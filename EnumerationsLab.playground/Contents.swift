@@ -154,25 +154,46 @@ assert(total == expectedTotal, "Was expecting \(expectedTotal), but got \(total)
 
 // Your code here
 
-enum Day {
-    case Sunday(String)
-    case Monday(String)
-    case Tuesday(String)
-    case Wednesday(String)
-    case Thursday(String)
-    case Friday(String)
-    case Saturday(String)
+enum Day: String {
+    case sunday
+    case monday
+    case tuesday
+    case wednesday
+    case thursday
+    case friday
+    case saturday
+    
+    func isWeekday() -> Bool {
+        var weekday = true
+        switch self {
+        case .sunday:
+            weekday = false
+        case .monday:
+            weekday = true
+        case .tuesday:
+            weekday = true
+        case .wednesday:
+            weekday = true
+        case .thursday:
+            weekday = true
+        case .friday:
+            weekday = true
+        case .saturday:
+            weekday = false
+        }
+        return weekday
+    }
 }
 
 // Uncomment the lines below to test your solution
 
-//assert(Day.monday.isWeekday() == true, "Monday is a weekday")
-//assert(Day.tuesday.isWeekday() == true, "Tuesday is a weekday")
-//assert(Day.wednesday.isWeekday() == true, "Wednesday is a weekday")
-//assert(Day.thursday.isWeekday() == true, "Thursday is a weekday")
-//assert(Day.friday.isWeekday() == true, "Friday is a weekday")
-//assert(Day.saturday.isWeekday() == false, "Saturday is not a weekday")
-//assert(Day.sunday.isWeekday() == false, "Sunday is not a weekday")
+assert(Day.monday.isWeekday() == true, "Monday is a weekday")
+assert(Day.tuesday.isWeekday() == true, "Tuesday is a weekday")
+assert(Day.wednesday.isWeekday() == true, "Wednesday is a weekday")
+assert(Day.thursday.isWeekday() == true, "Thursday is a weekday")
+assert(Day.friday.isWeekday() == true, "Friday is a weekday")
+assert(Day.saturday.isWeekday() == false, "Saturday is not a weekday")
+assert(Day.sunday.isWeekday() == false, "Sunday is not a weekday")
 
 // Question Five
 
@@ -183,6 +204,21 @@ enum Day {
 //Rock beats scissors, paper beats rock, scissor beats paper
 
 // Your code here
+
+enum HandShape {
+    case rock
+    case paper
+    case scissors
+}
+
+enum MatchResult{
+    case win
+    case draw
+    case lose
+    
+    func matchResult(fromPlayerOneShape: HandShape, andPlayerTwoShape: HandShape) {
+      
+}
 
 // Uncomment the lines below to test your solution
 
